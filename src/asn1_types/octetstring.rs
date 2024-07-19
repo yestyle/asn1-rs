@@ -3,9 +3,9 @@ use alloc::borrow::Cow;
 use core::convert::TryFrom;
 
 /// ASN.1 `OCTETSTRING` type
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct OctetString<'a> {
-    data: Cow<'a, [u8]>,
+    pub data: Cow<'a, [u8]>,
 }
 
 impl<'a> OctetString<'a> {
